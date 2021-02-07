@@ -1,0 +1,30 @@
+﻿@model FinalProject_Factory7_1.Models.department
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditDepartment</title>
+</head>
+<body>
+    <div>
+        <form action="/Department/GetUpdatedDepartment" method="post">
+            ID : @Html.EditorFor(x => x.ID) <br />
+
+            Department Name : @Html.EditorFor(x => x.DepName) <br />
+
+            Manager ID : @Html.EditorFor(x => x.Manager) <br />
+
+            <input type="submit" value="Update" />
+
+        </form>
+    </div>
+    <div>
+        @Html.ActionLink("Logout", "Index", "Login", null, null)
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿@model FinalProject_Factory7_1.Models.department
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>NewDepartment</title>
+</head>
+<body>
+    <div>
+        <form action="/Department/GetNewDepartmentFromUser" method="post">
+            Department Name : @Html.TextBoxFor(x => x.DepName) <br />
+
+            Manager ID : @Html.TextBoxFor(x => x.Manager) <br />
+
+            <input type="submit" value="Add" />
+        </form>
+    </div>
+    <div>
+        @Html.ActionLink("Logout", "Index", "Login", null, null)
+    </div>
+</body>
+</html>

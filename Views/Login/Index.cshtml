@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LogIn</title>
+</head>
+<body>
+    <div>
+        <h3>Log in Page</h3>
+
+        <form action="/Login/LoginVarify" method="post">
+            User Name: <input type="text" name="username" value="" /><br />
+            Password: <input type="password" name="pwd" value="" /><br />
+
+            <input type="submit" value="Login" />
+        </form>
+
+        @Html.ActionLink("Logout", "Index")
+        @ViewBag.msg
+    </div>
+</body>
+</html>

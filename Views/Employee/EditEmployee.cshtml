@@ -1,0 +1,55 @@
+﻿@model FinalProject_Factory7_1.Models.employees
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditEmployee</title>
+</head>
+<body>
+    <div>
+        <h3>Hello @ViewBag.fullName, Welcome to your</h3>
+        <h2>Edit Employee Page</h2>
+    </div>
+    <div>
+        <form action="/Employee/GetUpdatedEmployee" method="post">
+            
+
+            Employee ID : @ViewBag.empId <br />
+            First Name :  @Html.EditorFor(x => x.FirstName) <br />
+            Last Name :  @Html.EditorFor(x => x.LastName) <br />
+            Year Started :  @Html.EditorFor(x => x.YearStarted) <br />
+            Department :  @Html.EditorFor(x => x.DepID) <br />
+
+
+
+
+
+            <input type="submit" value="Update" />
+
+        </form>
+    </div>
+    <div>
+
+        <div>
+            <h4> </h4>
+        </div>
+        <a href="/Department/GetDepartmentlist">Department Page</a><br />
+        <a href="/Employee/Index">Employee Page</a><br />
+        <a href="/Shifts/Index">Shift Page</a><br />
+        <a href="/Home/HomePage">Home Page</a><br />
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        @Html.ActionLink("Logout", "Index", "Login", null, null)
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    @Html.ActionLink("Add New Shift", "AddShift") <br /> <br />
+    <table border="1">
+        <thead>
+            <tr><th>ID</th><th>Employee Name</th><th>Shift Date</th><th>Start Time</th><th>End Time</th></tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in ViewBag.shiftData)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    @{string name = @item.FullName;}
+                    <td>@Html.ActionLink(name, "EditEmployee", new { empID = @item.ID })</td>
+                    <td>@item.ShiftDate</td>
+                    <td>@item.StartTime</td>
+                    <td>@item.EndTime</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="/Department/GetDepartmentlist">Department Page</a><br />
+    <a href="/Employee/Index">Employee Page</a><br />
+    <a href="/Shifts/Index">Shift Page</a><br />
+    <a href="/Home/HomePage">Home Page</a><br />
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+    @Html.ActionLink("Logout", "Index", "Login", null, null)
+    
+</body>
+</html>

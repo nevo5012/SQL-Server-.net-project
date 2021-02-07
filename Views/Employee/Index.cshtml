@@ -1,0 +1,77 @@
+﻿
+@model IEnumerable<FinalProject_Factory7_1.Models.ViewModel>
+    @{
+        Layout = null;
+    }
+
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+     
+    </head>
+    <body>
+        <h3>Hello @ViewBag.fullName, Welcome to your Employee Page</h3>
+
+
+        <h4>Employee List</h4>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Year started</th>
+                    <th>department ID</th>
+
+
+
+                    <th>Shift ID</th>
+                    <th>Shift Date</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.empData)
+                {
+                    <tr>
+                        <td>@item.employees.ID</td>
+                        <td>@item.employees.FirstName</td>
+                        <td>@item.employees.LastName</td>
+                        <td>@item.employees.YearStarted</td>
+                        <td>@item.employees.DepID</td>
+
+
+
+                        <td>@item.shifts.ID</td>
+                        <td>@item.shifts.ShiftDate</td>
+                        <td>@item.shifts.StartTime</td>
+                        <td>@item.shifts.EndTime</td>
+
+
+
+                        <td>@Html.ActionLink("Edit", "EditEmployee", new { empID = @item.employees.ID })</td>
+                        <td>@Html.ActionLink("Delete", "DeleteEmployee", new { empID = @item.employees.ID })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div>
+            <a href="/Department/GetDepartmentlist">Department Page</a><br />
+            <a href="/Home/HomePage">Home Page</a><br />
+            <a href="/Shifts/Index">Shift Page</a><br />
+
+            <br />
+            <br />
+            <br />
+            <br />
+
+
+            @Html.ActionLink("Logout", "Index", "Login", null, null)
+        </div>
+    </body>
+</html>

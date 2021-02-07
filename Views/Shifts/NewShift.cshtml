@@ -1,0 +1,41 @@
+﻿@model FinalProject_Factory7_1.Models.shifts
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>NewShift</title>
+</head>
+<body>
+    <h3>@ViewBag.fullName, Welcome to your home page menu</h3>
+    <div>
+        <form action="/Shifts/GetNewShiftFromUser" method="post">
+            Shift Date : @Html.TextBoxFor(x => x.ShiftDate) <br />
+
+            Start Time : @Html.TextBoxFor(x => x.StartTime) <br />
+
+            End Time :  @Html.TextBoxFor(x => x.EndTime)
+            <input type="submit" value="Add" />
+        </form>
+    </div>
+    <div>
+        <a href="/Department/GetDepartmentlist">Department Page</a><br />
+        <a href="/Employee/Index">Employee Page</a><br />
+        <a href="/Shifts/Index">Shift Page</a><br />
+        <a href="/Home/HomePage">Home Page</a><br />
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        @Html.ActionLink("Logout", "Index", "Login", null, null)
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HomePage</title>
+    
+</head>
+<body>
+    <div>
+        <h1>Factory Home Page</h1><br /><br />
+        <h3>@ViewBag.fullName, Welcome to your home page menu</h3>
+        <div>
+            <h4> </h4>
+        </div>
+        <a href="/Department/GetDepartmentlist" >Department Page</a><br />
+        <a href="/Employee/Index">Employee Page</a><br />
+        <a href="/Shifts/Index">Shift Page</a><br />
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        @Html.ActionLink("Logout", "Index", "Login", null, null)
+
+
+
+    </div>
+</body>
+</html>

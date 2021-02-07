@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DepartmentList</title>
+</head>
+<body>
+    <div> 
+        <h1>Department List</h1>
+        <div>
+            <h3>User Name : @ViewBag.fullName</h3><br />
+            @Html.ActionLink("Logout", "Index", "Login") <br />
+            @Html.ActionLink("Back To Home Page", "HomePage","Home")<br />
+        </div>
+        
+
+        
+
+        @Html.ActionLink("Add New Department", "AddDepatment") <br /> <br />
+        <table border="1">
+              <tr><th>ID</th><th>Department Name</th><th>Manager Name</th></tr>
+
+            @foreach(var dep in ViewBag.departmentData)
+            {
+        <tr>
+            <td>@dep.ID</td>
+            <td>@dep.Name</td>
+            <td>@dep.ManagerName</td>
+            <td>@Html.ActionLink("Edit", "EditDepartment", new { departID = @dep.ID })</td>
+            <td>@Html.ActionLink("Delete", "DeleteDepartment", new { departID = @dep.ID })</td>
+
+        </tr>
+            }
+        </table>
+    
+    
+    </div>
+    <div>
+      
+    </div>
+</body>
+</html>
